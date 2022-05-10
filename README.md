@@ -3,7 +3,7 @@
 <br>
 
 # Space Flight News
-A aplicação Space Flight new foi um desafio da [Coodesh](https://coodesh.com/) que consome os dados de uma API pronta da [Space Flight News](https://api.spaceflightnewsapi.net/v3/documentation) para popular os dados do banco de dados da API desenvolvida neste desafio que, por sua vez, é responsável por disponibilizar as funcionalidades de listagem dos artigos armazenados no banco de dados e manter a lista de artigos sicronizada com a base original de dados por meio de um CRON executado todos os dias 9:00 horas (GMT-3). Na aplicação front-End desenvolvida para o consumo da API, temos a possibilidade de visualizar os artigos em um layout proposto pelo wireframe do desafio, além de possuir as funcionalidades de filtragem por termos do título dos artigos, ordenação por data de publicação e carregamento de novos artigos
+A aplicação Space Flight new foi um desafio da [Coodesh](https://coodesh.com/) que utiliza os dados do projeto [Space Flight News](https://api.spaceflightnewsapi.net/v3/documentation) na API desenvolvida, que é utilizadapara consumo de rotas na aplicação front-end.
 
 <br>
 
