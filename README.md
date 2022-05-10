@@ -58,6 +58,7 @@ Para construção do banco de dados.
 ### Back-end:
 rode os seguintes scripts em ordem:
 <br>
+<br>
 ```Yarn``` ou ```npm install```
 <br>
 ```Yarn populate``` ou ```npm run populate```
@@ -67,6 +68,7 @@ rode os seguintes scripts em ordem:
 ### Front-end:
 
 rode os seguintes scripts em ordem:
+<br>
 <br>
 ```Yarn``` ou ```npm install```
 <br>
