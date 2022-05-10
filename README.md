@@ -53,7 +53,7 @@ Para construção do banco de dados.
 
 ## Instruções de Instalação
 
-####Observação: caso não possua o gerenciador de pacotes Yarn instalado, utilize os comandos equivalentes do NPM ou instale o [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/).
+#### Observação: caso não possua o gerenciador de pacotes Yarn instalado, utilize os comandos equivalentes do NPM ou instale o [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/).
 
 ### Back-end:
 rode os seguintes scripts em ordem:
