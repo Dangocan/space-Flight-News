@@ -56,8 +56,9 @@ Para construção do banco de dados.
 #### Observação: caso não possua o gerenciador de pacotes Yarn instalado, utilize os comandos equivalentes do NPM ou instale o [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/).
 
 ### Back-end:
-rode os seguintes scripts em ordem:
-<br>
+
+Adicione um arquivo ```.env``` seguindo o exemplo do arquivo ```.env.example``` com uma URL de acesso para um banco MongoDB.
+Em seguida execute os seguintes scripts em ordem:
 <br>
 ```Yarn``` ou ```npm install```
 <br>
