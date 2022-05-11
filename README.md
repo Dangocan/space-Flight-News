@@ -59,8 +59,6 @@ Para construção do banco de dados.
 
 1. Adicione um arquivo ```.env``` seguindo o exemplo do arquivo ```.env.example``` com uma URL de acesso para um banco MongoDB.
 2. Rode os seguintes scripts em ordem:
-<br>
-<br>
 ```Yarn``` ou ```npm install```
 <br>
 ```Yarn populate``` ou ```npm run populate```
