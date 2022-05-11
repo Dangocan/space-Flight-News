@@ -3,6 +3,7 @@
 <br>
 
 # Space Flight News
+
 A aplicação Space Flight new foi um desafio da [Coodesh](https://coodesh.com/) que utiliza os dados do projeto [Space Flight News](https://api.spaceflightnewsapi.net/v3/documentation) na API desenvolvida, que é utilizadapara consumo de rotas na aplicação front-end.
 
 <br>
@@ -37,19 +38,18 @@ Para construção do banco de dados.
 
 ### Back-end
 
-  * Script de população de dados;
-  * Listagem de Artigos
-  * Sincronização de Artigos novos com CRON
-  * Paginação de rota
-  * Filtro de requisições
+- Script de população de dados;
+- Listagem de Artigos
+- Sincronização de Artigos novos com CRON
+- Paginação de rota
+- Filtro de requisições
 
 ### Front-end
 
-* Vizualização de listagem dinâmica de artigos
-* Pesquisa de termos nos títulos
-* Ordenação por data crescente e decrescente
-* Carregamento de novos artigos
-
+- Vizualização de listagem dinâmica de artigos
+- Pesquisa de termos nos títulos
+- Ordenação por data crescente e decrescente
+- Carregamento de novos artigos
 
 ## Instruções de Instalação
 
@@ -57,22 +57,24 @@ Para construção do banco de dados.
 
 ### Back-end:
 
-Adicione um arquivo ```.env``` seguindo o exemplo do arquivo ```.env.example``` com uma URL de acesso para um banco MongoDB.
+Adicione um arquivo `.env` seguindo o exemplo do arquivo `.env.example` com uma URL de acesso para um banco MongoDB.
 Em seguida execute os seguintes scripts em ordem:
 <br>
-```Yarn``` ou ```npm install```
+`Yarn` ou `npm install`
 <br>
-```Yarn populate``` ou ```npm run populate```
+`Yarn populate` ou `npm run populate`
 <br>
-```Yarn start``` ou ```npm start```
+`Yarn start` ou `npm start`
 
 ### Front-end:
 
 rode os seguintes scripts em ordem:
 <br>
 <br>
-```Yarn``` ou ```npm install```
+`Yarn` ou `npm install`
 <br>
-```Yarn start``` ou ```npm start```
+`Yarn start` ou `npm start`
 
 <br>
+
+### Link da Apresentação: [vídeo](https://www.loom.com/embed/9b909ef3e69c4f89960f0eb7dc13f82c)
