@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IArticle } from "../../interfaces/Articles";
 
 interface ICardProps {
@@ -8,6 +8,9 @@ interface ICardProps {
 
 export const ArticleCard: React.FC<ICardProps> = ({ content, invert }) => {
   const articleDate = new Date(content.publishedAt);
+
+  const [hoverLoadMoreButton, setHoverLoadMoreButton] =
+    useState<boolean>(false);
 
   function adicionaZero(number: any) {
     if (number <= 9) return "0" + number;
@@ -24,7 +27,7 @@ export const ArticleCard: React.FC<ICardProps> = ({ content, invert }) => {
         borderRadius: "4px",
         boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         margin: "2em 0",
-        height: "250px",
+        height: "20vw",
         padding: "1em",
       }}
     >
@@ -102,11 +105,13 @@ export const ArticleCard: React.FC<ICardProps> = ({ content, invert }) => {
           style={{
             border: "1px solid #302E53",
             borderRadius: "4px",
-            backgroundColor: "#302E53",
-            color: "#FFFFFF",
+            backgroundColor: !hoverLoadMoreButton ? "#302E53" : "#FFFFFF",
+            color: !hoverLoadMoreButton ? "#FFFFFF" : "#302E53",
             textDecoration: "none",
             padding: ".5em 1em",
           }}
+          onMouseEnter={() => setHoverLoadMoreButton(true)}
+          onMouseLeave={() => setHoverLoadMoreButton(false)}
         >
           Ver Mais
         </a>

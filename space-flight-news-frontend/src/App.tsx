@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
+import { useEffect, useState } from "react";
 import { IArticle } from "./interfaces/Articles";
 import axios from "axios";
 import { IQueryParams } from "./interfaces/Articles";
@@ -12,13 +11,21 @@ function App() {
   );
 
   const [loading, setLoading] = useState<boolean>(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [buttonLoading, setButtonLoading] = useState<boolean>(true);
-  const [buttonPressCount, setButtonPressCount] = useState<number>(1);
 
+  const [hoverLoadMoreButton, setHoverLoadMoreButton] =
+    useState<boolean>(false);
+
+  const [focusSearch, setFocusSearch] = useState<boolean>(false);
+  const [focusSelect, setFocusSelect] = useState<boolean>(false);
+
+  const [buttonPressCount, setButtonPressCount] = useState<number>(1);
   const [sort, setSort] = useState<string>("");
   const [contain, setContain] = useState<string>("");
 
   const fetchArticles = async (params?: IQueryParams) => {
+    setLoading(true);
     try {
       const articleSArray = await axios.get("http://localhost:3333/articles", {
         params: { ...params },
@@ -31,6 +38,7 @@ function App() {
   };
 
   const fetchMoreArticles = async () => {
+    setButtonLoading(true);
     try {
       const articleSArray = await axios.get("http://localhost:3333/articles", {
         params: { page: buttonPressCount, contain, sort },
@@ -55,6 +63,7 @@ function App() {
 
   useEffect(() => {
     fetchMoreArticles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonPressCount]);
 
   useEffect(() => {
@@ -93,8 +102,13 @@ function App() {
               padding: ".6em",
               border: "1px solid #302E53",
               borderRight: "none",
+              borderColor: focusSearch ? "#D07017" : "#302E53",
               borderRadius: "4px 0px 0px 4px",
+              transition: "all 0.2s linear",
+              outline: "none",
             }}
+            onFocus={() => setFocusSearch(true)}
+            onBlur={() => setFocusSearch(false)}
           />
           <button
             style={{
@@ -102,7 +116,9 @@ function App() {
               border: "1px solid #302E53",
               borderLeft: "none",
               borderRadius: "0px 2px 2px 0px",
+              borderColor: focusSearch ? "#D07017" : "#302E53",
               backgroundColor: "transparent",
+              cursor: "pointer",
             }}
             onClick={() => fetchArticles({ contain: contain, sort: sort })}
           >
@@ -111,7 +127,8 @@ function App() {
                 padding: ".4em .4em",
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#302E53",
+                transition: "all 0.2s linear",
+                backgroundColor: focusSearch ? "#D07017" : "#302E53",
               }}
             >
               <IoIosSearch
@@ -126,6 +143,10 @@ function App() {
               border: "1px solid #302E53",
               backgroundColor: "transparent",
               padding: "0 .5em",
+              cursor: "pointer",
+              borderColor: focusSelect ? "#D07017" : "#302E53",
+              transition: "all 0.2s linear",
+              outline: "none",
             }}
             defaultValue=""
             name="select"
@@ -133,6 +154,8 @@ function App() {
               setSort(target.value);
               fetchArticles({ contain: contain, sort: target.value });
             }}
+            onFocus={() => setFocusSelect(true)}
+            onBlur={() => setFocusSelect(false)}
           >
             <option value="">Sort</option>
             <option value="asc">Mais antigas</option>
@@ -197,11 +220,15 @@ function App() {
               style={{
                 border: "1px solid #302E53",
                 borderRadius: "2px",
-                backgroundColor: "#FFFFFF",
-                color: "#302E53",
+                backgroundColor: hoverLoadMoreButton ? "#302E53" : "#FFFFFF",
+                color: hoverLoadMoreButton ? "#FFFFFF" : "#302E53",
                 padding: ".5em 1em",
                 margin: "3em 0 2em 0",
+                cursor: "pointer",
+                transition: "all 0.2s linear",
               }}
+              onMouseEnter={() => setHoverLoadMoreButton(true)}
+              onMouseLeave={() => setHoverLoadMoreButton(false)}
               onClick={() => setButtonPressCount(buttonPressCount + 1)}
             >
               Carregar Mais
