@@ -57,8 +57,9 @@ Para construção do banco de dados.
 
 ### Back-end:
 
-1. Adicione um arquivo ```.env``` seguindo o exemplo do arquivo ```.env.example``` com uma URL de acesso para um banco MongoDB.
-2. Rode os seguintes scripts em ordem:
+Adicione um arquivo ```.env``` seguindo o exemplo do arquivo ```.env.example``` com uma URL de acesso para um banco MongoDB.
+Em seguida execute os seguintes scripts em ordem:
+<br>
 ```Yarn``` ou ```npm install```
 <br>
 ```Yarn populate``` ou ```npm run populate```
