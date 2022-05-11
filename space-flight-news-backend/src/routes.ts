@@ -39,6 +39,11 @@ router.get("/articles", async (req, res) => {
   return res.status(200).json(articles);
 });
 
+router.get(`/articles/:id`, async (req, res) => {
+  const article = await Article.findOne({ id: req.params.id });
+  return res.status(200).json(article);
+});
+
 router.post("/articles", async (req, res) => {
   const article = {
     id: req.body.id,
